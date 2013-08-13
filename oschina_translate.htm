@@ -1,0 +1,188 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>PhoneJS - HTML5 JavaScript 移动开发框架 - 技术翻译 - 开源中国社区</title>
+<script type="text/javascript" src="http://www.oschina.net/js/2011/jquery-1.5.1.min.js"></script>
+<script type="text/javascript" src="http://www.oschina.net/js/syntax-highlighter-2.1.382/scripts/brush.js"></script>
+<link type="text/css" rel="stylesheet" href="http://www.oschina.net/js/syntax-highlighter-2.1.382/styles/shCore.css"/>
+<link type="text/css" rel="stylesheet" href="http://www.oschina.net/js/syntax-highlighter-2.1.382/styles/shThemeDefault.css"/>
+<script type='text/javascript'>
+$(document).ready(function(){
+    $('pre').each(function(){
+        this.className = this.className.replace('toolbar: true;','');
+        SyntaxHighlighter.highlight({toolbar:false},this);
+    });
+});
+</script>
+<style type='text/css'>
+body{padding: 10px;margin: 0;background: white;color: #000000;}
+body,table,input,textarea,select {font-family:微软雅黑,Verdana,sans-serif,宋体;}
+a:link, a:visited {color: #000000;text-decoration: none;background: transparent;}
+img {1px solid #cccccc;background-color: #fff;}
+h1 {border-bottom:2px solid #666;padding:0 0 20px 0;}
+.TextContent {line-height:1.2em;}
+.TextContent pre {margin:10px 0;font-size:9pt;font-family:Courier New,Arial}
+.TextContent code {margin: 0 2px;padding: 0 5px;white-space: nowrap;}
+.TextContent pre>code {margin: 0;padding: 0;white-space: pre;border: none;background: transparent;}
+.TextContent pre code{background-color: transparent;border: none;}
+.TextContent ol,.TextContent ul {margin:20px 0 20px 20px;list-style-position: inside;}
+.TextContent ol{list-style-type:decimal;margin: 0.5em 0 0.5em 1.5em;}
+.TextContent ul{list-style-type:disc;margin: 0.5em 0 0.5em 1.5em;}
+.TextContent img{max-width: 980px;}
+.links{margin-top:1em;padding:1.25em 0;color:#666;}
+.links a, .copyright a {color:#666;}
+.links p{margin: 0; padding: 0;}
+.copyright{padding:1.25em 0; border-top: 1px solid #AAA;color:#666;}
+</style>
+</head>
+<body>
+<h1>PhoneJS - HTML5 JavaScript 移动开发框架</h1>
+<div class="TextContent">
+<h2>简介 </h2>
+<p>大伙儿都知道有很多基于HTML5的移动应用框架。下一代开发工具将帮助开发者远离那些难学和让人费劲的原生SDK语言，如Objective-C,Java等。大家都知道，HTML5代表着交叉平台如移动应用程序开发的未来。 </p>
+<p>那为什么呢？为什么HTML5会如此的流行？ </p>
+<p>整个世界将会掀起自带设备(BYOD)支持HTML5的风潮。BYOD意味着开发者的应用将不会局限于单个平台，因为消费者想让应用出现在他们日常用的所有设备上。HTML5是可以一次编写跨平台运行，同时用户体验非常接近原生API开发的解决方案，同时让开发者免去了不同平台移植的痛苦。未来交叉平台上的浏览器将都会支持HTML5,HTM5应用让用户体验还是不错的，有时很难区分是用原生API写的程序还是HTML写的。 </p>
+<p>支持跨平台，缩短上市时间以及维护费用低只是HTML/Javascript众多优点的几种。不仅如此，HTML会减少在新兴技术使用的长期风险，如在WinRT，ChromeOS，FirefoxOS，和Tizen等。 </p>
+<p>简单的说，HTML/Javascript是唯一跨平台的编程语言。 </p>
+<p>用HTML/Javascript有缺点吗？当然，原生API程序将消耗更少的内存，同时将更快，用户体验将更好。但对于一般应用来说，HTML/Javascript就够了，你可以用它创建跨平台的移动应用程序，然后可以打包提交到应用商店。PhoneJs会这一切来的更快。 </p>
+<h2>试着用用PhoneJS吧 </h2>
+<p><span><a href="http://go.devexpress.com/CodeProject_ArtemArticle_633706_PhoneJS.aspx" target="_blank" rel="nofollow">PhoneJS</a>是一个多样，灵活和有效的交叉平台HTML5移动应用开发框架。PhoneJS是单页面应用(SPA)框架，它拥有视图管理和URL导航。PhoneJS布局引擎在视图中设置抽象的导航，这样同一个应用程序根据不用平台和不同的情况将显示不同。<strong></strong></span><span>PhoneJS内置丰富的触摸优化的UI组件，这些组件都是在iOS，Android和Windows Phone 8中非常的流行。</span></p>
+<p><img src="http://static.oschina.net/uploads/img/201308/10082100_utdo.jpg" alt="" /></p>
+<p>为了能更好的理解PhoneJS开发的原则和怎样创建和在应用商店发布应用，咱一起看一下叫<a href="http://phonejs.devexpress.com/Demos/?url=TipCalculator&amp;sm=3" target="_blank" rel="nofollow">TipCalculator</a>的简单例子。这个应用帮助你计算餐厅账单。源码在<a href="https://github.com/DevExpress/PhoneJS-TipCalculator" target="_blank" rel="nofollow">这</a><span style="line-height:1.5;font-size:10pt;">。</span></p>
+<p>你可以在AppStroke，Google Play，Windows Store上找到它。 </p>
+<p><a target="_blank" href="https://itunes.apple.com/us/app/dxtipcalculator/id661664556?mt=8&amp;uo=4" rel="nofollow"><img src="http://static.oschina.net/uploads/img/201308/10082101_BGMx.gif" height="40" width="116" /></a><a target="_blank" href="https://play.google.com/store/apps/details?id=app.id_b1b896ef8da1463bb7a0551fd636e8be" rel="nofollow"><img src="http://static.oschina.net/uploads/img/201308/10082101_axsV.png" height="45" width="129" /></a><a target="_blank" href="http://windowsphone.com/s?appId=47a6e70a-4257-4179-bd36-22598e1b219c" rel="nofollow"><img src="http://static.oschina.net/uploads/img/201308/10082102_D6Rq.png" height="40" width="125" /></a></p>
+<h2>PhoneJS布局和导航 </h2>
+<p><a href="http://phonejs.devexpress.com/Demos/?url=TipCalculator&amp;sm=3" target="_blank" rel="nofollow">TipCalculator</a>是基于HTML5的单页面(SPA)应用。开始页是<a href="https://github.com/DevExpress/PhoneJS-TipCalculator/blob/master/index.html" target="_blank" rel="nofollow">index.html</a>，里面是标准的标签，CSS和Javascript资源。它包括<a href="https://github.com/DevExpress/PhoneJS-TipCalculator/blob/master/index.js" target="_blank" rel="nofollow">index.js</a>Javascript脚本，你可以在<span>PhoneJS的配置中找到：</span></p>
+<p><span></span></p>
+<pre class="brush:js; toolbar: true; auto-links: false;">TipCalculator.app = new DevExpress.framework.html.HtmlApplication({
+    namespace: TipCalculator,
+    defaultLayout: &quot;empty&quot;
+});</pre>这里，我们必须指定默认的布局。这个例子中我们用了简单选项和一个空布局。更多更高级的布局如交互式导航风格也是支持的，如下图： 
+<p><span><img src="http://static.oschina.net/uploads/img/201308/10082102_B1mK.png" alt="" /><br /></span></p>
+<p><span>很多服务器端框架都支持PhoneJS一些布局方法，包括Ruby on Rails 和ASP.NET MVC.更多有关视图和布局的信息在我们<a href="http://phonejs.devexpress.com/Howto/Views_and_Layouts" target="_blank" rel="nofollow">在线文档</a>里可以找到。<br /></span></p>
+<p><span>为了在我们单页面应用中配置视图导航，我们需在index.js中添加如下行：</span></p>
+<p><span></span></p>
+<pre class="brush:js; toolbar: true; auto-links: false;">TipCalculator.app.router.register(&quot;:view&quot;, { view: &quot;home&quot; });</pre>这里注册了一个简单的导航，这样就可以从URL(URL中的哈希段)中找到视图名称。主页视图是默认的设置。每一个视图都有自己的HTML文件，并且都能连接到index.html： 
+<p><span></span></p>
+<pre class="brush:js; toolbar: true; auto-links: false;">&lt;link rel=&quot;dx-template&quot; type=&quot;text/html&quot; href=&quot;views/home.html&quot; /&gt;</pre>
+<h2>PhoneJS 视图模型 </h2>
+<p>一个视图模型代表着视图的数据和操作。每一个视图都有一个相同的基本名称作为视图自身，而且能返回视图自身的视图模型。在主页视图中，<a href="https://github.com/DevExpress/PhoneJS-TipCalculator/blob/master/views/home.js" target="_blank" rel="nofollow">view/home.js</a>脚本定义了home函数，这里面创建了响应式视图模式。 </p>
+<pre class="brush:js; toolbar: true; auto-links: false;">TipCalculator.home = function(params) {
+    ...
+};</pre>
+<p>账单计算算法中输入参数有3个：账单数，付账的人数，账单百分比。这些变量的定义都是可见的，这些都会有相应的UI组件与之对应。 </p>
+<p>注意：可见函数是由Knockout.js提供的，它在PhoneJS中是构建视图模型的关键。你可以在<a href="http://knockoutjs.com/documentation/observables.html" target="_blank" rel="nofollow">这</a>了解Knockout.js更多的信息。 </p>
+<p>下面的代码是home函数中初始化变量的： </p>
+<pre class="brush:js; toolbar: true; auto-links: false;">var billTotal = ko.observable(),
+    tipPercent = ko.observable(DEFAULT_TIP_PERCENT),
+    splitNum = ko.observable(1);</pre>小费计算的结果有4种值：应付总数，每人付的总数，小费总数，每人付的平均数。每个值都是依赖可度量值(可计算的值)，当任何一种值发生变化时，这些值都要重新计算一边。当然，这也是Knockout.js的功能。 
+<pre class="brush:js; toolbar: true; auto-links: false;">var totalTip = ko.computed(...);
+var tipPerPerson = ko.computed(...);
+var totalPerPerson = ko.computed(...);
+var totalToPay = ko.computed(...);</pre>举一个在商业逻辑中应用视图模型的例子，那咱就看看上一个例子中的可度量值totalToPay。 
+<p>计算的总额常常会四舍五入。依次，我们有两个函数roundUp和roundDown来改变四舍五入的模式(另一个可度量值). </p>
+<p>这些变化将引起totalToPay的重新计算，因为四舍五入的模式也会用到totalToPay的可度量值中。 </p>
+<pre class="brush:js; toolbar: true; auto-links: false;">var totalToPay = ko.computed(function() {
+    var value = totalTip() + billTotalAsNumber();
+
+    switch(roundMode()) {
+        case ROUND_DOWN:
+            if(Math.floor(value) &gt;= billTotalAsNumber())
+                return Math.floor(value);
+            return value;
+
+        case ROUND_UP:
+            return Math.ceil(value);
+        default:
+            return value;
+    }
+});</pre>
+<p>当视图中任何一个输入参数发生变化时，舍入的做法不会让用户看到精确值。我们赞成如下的UI-bound度量值的改变： </p>
+<pre class="brush:js; toolbar: true; auto-links: false;">billTotal.subscribe(function() {
+    roundMode(ROUND_NONE);
+});
+
+tipPercent.subscribe(function() {
+    roundMode(ROUND_NONE);
+});
+
+splitNum.subscribe(function() {
+    roundMode(ROUND_NONE);
+});</pre>
+<p>在home.js中可以找到一个完整的视图模型。它是一个典型视图模型的简单例子。 </p>
+<p>注意：在复杂的应用中，对于每一个独立的视图实现文件，<span>实现一个可以模式化结</span>视图模式是很有用的。换句话说，如home.js不需要包含实现视图模式的实现代码，而是调一个帮助函数或者其它方式来实现。这样就可以使整个结构变的简单了。 </p>
+<h3>PhoneJS 视图 </h3>
+<p>让我们跳转到在&nbsp;<a href="https://github.com/DevExpress/PhoneJS-TipCalculator/blob/master/views/home.html" rel="nofollow">view/home.html</a>文件中标记的视图。最上层的div元素呈现一个名称为“home”的视图。<span>在</span><span>这个div中包含了一个叫做‘conetent’的定位文本。</span></p>
+<pre class="brush:html; toolbar: true; auto-links: false;">&lt;div data-options=&quot;dxView : { name: 'home' }&quot;&gt;
+     &lt;div data-options=&quot;dxContent : { targetPlaceholder: 'content' }&quot;&gt;
+         ...
+     &lt;/div&gt;
+&lt;/div&gt;</pre>
+<p><span>在视图的顶部有一个toolbar</span></p>
+<pre class="brush:html; toolbar: true; auto-links: false;">&lt;div data-bind=&quot;dxToolbar: { items: [ { align: 'center', text: 'Tip Calculator' } ] }&quot;&gt;&lt;/div&gt;</pre>
+<strong>dxToolbar<em>&nbsp; </em></strong>
+<em></em>是PhoneJS UI的一个窗口小组件。它是通过使用Knockout.js绑定标记定义的。
+<p>在工具栏下面是一个自定义控件。我们使用了2个能够被PhoneJS编译通过的特殊CSS类：分别是dx-fieldset和dx-field。这个自定义控件包含了一个记录总账单的文本域和两个选择器分别是选择小费的百分比和选择用餐人的数量。 </p>
+<pre class="brush:html; toolbar: true; auto-links: false;">&lt;div data-bind=&quot;dxNumberBox: { value: billTotal, placeholder: 'Type here...', valueUpdateEvent: 'keyup',min: 0 }&quot;&gt;
+&lt;/div&gt;
+
+&lt;div data-bind=&quot;dxSlider: { min: 0, max: 25, step: 1, activeStateEnabled: true, value: tipPercent }&quot;&gt;&lt;/div&gt;
+
+&lt;div data-bind=&quot;dxSlider: { min: 1, step: 1, max: 10, activeStateEnabled: true, value: splitNum }&quot;&gt;&lt;/div&gt;</pre>
+<p>在下面的编辑器里面展示了2个按钮（dxButton），用于允许用户支付总金额。其他的剩余视图字段用于计算结果。 </p>
+<pre class="brush:html; toolbar: true; auto-links: false;">&lt;div class=&quot;round-buttons&quot;&gt;
+    &lt;div data-bind=&quot;dxButton: { text: 'Round Down', clickAction: roundDown }&quot;&gt;&lt;/div&gt;
+    &lt;div data-bind=&quot;dxButton: { text: 'Round Up', clickAction: roundUp }&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id=&quot;results&quot; class=&quot;dx-fieldset&quot;&gt;
+    &lt;div class=&quot;dx-field&quot;&gt;
+        &lt;span class=&quot;dx-field-label&quot;&gt;Total to pay&lt;/span&gt;
+        &lt;span class=&quot;dx-field-value&quot; style=&quot;font-weight: bold&quot; data-bind=&quot;text: Globalize.format(totalToPay(), 'c')&quot;&gt;&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;dx-field&quot;&gt;
+        &lt;span class=&quot;dx-field-label&quot;&gt;Total per person&lt;/span&gt;
+        &lt;span class=&quot;dx-field-value&quot; data-bind=&quot;text: Globalize.format(totalPerPerson(), 'c')&quot;&gt;&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;dx-field&quot;&gt;
+        &lt;span class=&quot;dx-field-label&quot;&gt;Total tip&lt;/span&gt;
+        &lt;span class=&quot;dx-field-value&quot; data-bind=&quot;text: Globalize.format(totalTip(), 'c')&quot;&gt;&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;dx-field&quot;&gt;
+        &lt;span class=&quot;dx-field-label&quot;&gt;Tip per person&lt;/span&gt;
+        &lt;span class=&quot;dx-field-value&quot; data-bind=&quot;text: Globalize.format(tipPerPerson(), 'c')&quot;&gt;&lt;/span&gt;
+    &lt;/div&gt;
+</pre>
+<p><span>这就完成了在描述文件中要求使用phonej</span><span>s创建一个简</span><span>单的应用程序</span><span>。正</span><span>如你所看到的，这个过程就是这么的简单，直接和直观。</span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></p>
+<h2>启动，调试和发布 </h2>
+<p>启动和调试一个PhoneJS程序和其他基于HTML5的应用程序操作一样，你必须把包含HTML、Javascript的文件夹和其它所需资源部署到web服务器上。因为PhoneJS是一个无服务器端组件的模型，并不关心你使用哪种web服务器，只要能通过HTTP协议访问所需资源就行。一旦部署成功，你就可以在设备、模拟器打开应用，或者通过在桌面浏览器 导航栏输入应用首页的URL进行访问。 </p>
+<p>如果你想通过桌面浏览器看到手机和平板上访问应用一样的效果，你需要重新设置浏览器的UserAgent属性。 幸运的是，利用目前流行的浏览器提供的开发者工具很容易实现。 </p>
+<img width="461" height="674" src="http://static.oschina.net/uploads/img/201308/10082104_1CyN.png" />
+<p><br /></p>
+<p>如果你不喜欢改UserAgent的设置，你可以用&nbsp;<a href="http://emulate.phonegap.com/" rel="nofollow">Ripple Emulator</a>来模拟不同设备来查看效果。 </p>
+<p><img width="640" height="707" src="http://static.oschina.net/uploads/img/201308/10082104_W3QE.png" /></p>
+<p>在这个层次上，你的web应用将会在移动设备的浏览器上像本地应用一样运行。现在移动设备上的浏览器提供了访问本地存储、地理位置API，摄像头的接口。多好的机会啊，你已经拥有了所有你需要的东西。 </p>
+<h2>使用PhoneJS和PhoneGap创建应用并发布到APP Store </h2>
+<p>但是如果你想访问设备的特性而浏览器没有提供的话呢？如果你想把它作为一个app store里面的应用而不仅仅是一个网页呢？那么你就得创建一个混合应用,实际上这类应用的标准是<a href="http://cordova.apache.org/" rel="nofollow">Apache Cordova</a>又名&nbsp;<a href="http://phonegap.com/" rel="nofollow">PhoneGap</a>。 </p>
+<p>PhoneGap项目是一个允许你创建包含Webview(浏览器控制)和需要通过Javascript对PhoneGap提供的库和插件进行原生调用的本地应用开发平台。 </p>
+<p>你需要有对应平台的SDK才能使用它，但是你不需要了解原生开发的具体细节,你只需要将你的HTML，CSS，JS文件放在正确的位置，并指定你应用的属性比如名字、版本、图标、快照等等。 </p>
+<p>为了发行你的应用，你需要在不同的商店注册为开发人员。每个商店都有注册过程的详细文档，这里就不罗嗦了。之后你将会收到一个认证来对你的应用进行签名。 </p>
+<p>在你听到HTML5/JS的目标是“一次编写，到处运行”之后，你也许觉得每个平台下SDK开发可能更是一个大挑战。也许你得为你构建的混合应用付一些费用，但还好，一切都在控制中，因为有些服务组织和产品就能解决这个问题。 </p>
+<p>一个就是Adobe在线服务-<a href="https://build.phonegap.com/" target="_blank" rel="nofollow">PhoneGap</a>，它可以构建一个免费的应用(多了要收费的)。如果你需要平台认证文件，只需点击下鼠标，这个服务商轻松为你构建所有平台的认证。为了你的应用能顺利提交到商店，你只需要准备应用的说明，推销和相关信息内容，以及一些图片即可。 </p>
+<p>对于Visual Studio开发者来说，DevExpress提过一个产品叫<a href="http://www.devexpress.com/Products/HTML-JS/" target="_blank" rel="nofollow">DevExtreme</a>(里面包括PhoneJS)，这个产品可以帮助你直接在Microsoft Visual Studio集成开发环境构建iOS，Android和Windows Phone 8应用程序。 </p>
+<p><img src="http://static.oschina.net/uploads/img/201308/10082105_J4iT.jpg" alt="" /></p>
+<p>总结一下：如果你需要构建一个在移动设备上像原生API开发的网络应用程序，你需要PhoneJS，它里面包含你想要的一切。如果你需要用Javascript更深层次的控制设备，如联系人列表，照相等，你需要Cordova或者叫PhoneGap。PhoneGap允许你将网络应用打包成本地安装包。如果你不想安装不同平台的SDK，你可以用PhoneGap服务来构建你得应用，如果你有DevExtreme，你也可以在Visual Studio实现。 </p>
+</div>
+<div class="links">
+    <p>本文地址：<a href="http://www.oschina.net/translate/phonejs-html5-javascript-mobile-development-framew">http://www.oschina.net/translate/phonejs-html5-javascript-mobile-development-framew</a></p>
+    <p>原文地址：<a href="http://www.codeproject.com/Articles/633706/PhoneJS-HTML5-JavaScript-Mobile-Development-Framew">http://www.codeproject.com/Articles/633706/PhoneJS-HTML5-JavaScript-Mobile-Development-Framew</a></p>
+</div>
+<div class="copyright">
+    本文中的所有译文仅用于学习和交流目的，转载请务必注明文章译者、出处、和本文链接<br/>
+    我们的翻译工作遵照 <a href='http://zh.wikipedia.org/wiki/Wikipedia:CC' target='_blank'>CC 协议</a>，如果我们的工作有侵犯到您的权益，请及时联系我们
+</div>
+</body>
+</html>
+
+<!-- Generated by OsChina.NET (init:0[ms],page:3[ms],ip:14.153.255.150) -->

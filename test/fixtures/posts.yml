@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  title: MyString
+  entitle: 
+  author: 
+  type: 
+  keywords: MyString
+  views: 1
+  comments: 1
+  text: MyText
+
+two:
+  title: MyString
+  entitle: 
+  author: 
+  type: 
+  keywords: MyString
+  views: 1
+  comments: 1
+  text: MyText

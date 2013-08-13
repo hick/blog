@@ -1,0 +1,80 @@
+<%= form_for :post , url: posts_path do |f| %>
+
+ <% if @post.errors.any? %>
+  <div id="errorExplanation">
+    <h2><%= pluralize(@post.errors.count, "error") %> prohibited
+      this post from being saved:</h2>
+    <ul>
+    <% @post.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+  <% end %>
+
+  <p>
+    <%= f.label :" * 标题" %><br>
+    <%= f.text_field :title %>
+  </p>
+ 
+  <p>
+    <%= f.label :" - 英文标题" %><br>
+    <%= f.text_field :entitle %>
+  </p>
+ 
+  <p>
+    <%= f.label :" * 关键词(逗号分割)" %><br>
+    <%= f.text_field :keywords %>
+  </p>
+ 
+  <p>
+    <%= f.label :" * 正文" %><br>
+    <%= f.text_area :text %>
+  </p>
+ 
+  <p>
+    <%= f.submit  :"保存" %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', posts_path %>
+
+
+<script>
+$("input[name='commit']").click(function(){
+
+  // 标题的检查
+  var title = $("#post_title").val();
+  if(title.length < 3)
+  {
+    alert("标题不能为空");
+    return false;
+  }
+
+  // 英文标题
+  var entitle = $("#post_entitle").val();
+  if(entitle.length < 1)
+  {
+    $("#post_entitle").val(title)
+  }
+
+  // 关键词
+  var keywords = $("#post_keywords").val();
+  if(keywords.length < 2)
+  {
+    alert("关键词不能为空");
+    return false;
+  }
+
+  // 正文
+  var text = $("#post_text").val();
+  if(text.length < 3)
+  {
+    alert("正文不能为空");
+    return false;
+  }
+
+  // alert($("input[name='commit']").val());
+  // return false;
+});
+</script>
