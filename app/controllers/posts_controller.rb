@@ -23,6 +23,30 @@ class PostsController < ApplicationController
         end
     end
 
+    ### 修改日志页面
+    def edit
+        @post = Post.find(params[:id])
+    end
+
+    ### 修改日志操作
+    def update
+        @post = Post.find(params[:id])
+
+        if @post.update(params[:post].permit(:title, :entitle, :text))
+            redirect_to @post
+        else
+            render 'edit'
+        end
+    end
+
+    ### 删除日志
+    def destroy
+        @post = Post.find(params[:id])
+        @post.destroy
+
+        redirect_to posts_path
+    end
+
     private
         def post_params
             params.require(:post).permit(:title, :entitle, :keywords, :text)
