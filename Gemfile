@@ -25,7 +25,7 @@ gem 'jquery-rails'
 gem 'turbolinks'
 
 # markdown dealer
-gem 'redcarpe', '3.0.0'
+gem "redcarpet", "~> 3.0.0"
 
 # pager
 gem 'will_paginate', '3.0.4'
