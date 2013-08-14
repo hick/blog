@@ -8,7 +8,7 @@ Blog::Application.routes.draw do
 
 # seo 短 url
   # get '/:id' => 'posts#show
-  get '/:title', to: 'posts#entitle', constraints: { title: /[a-z]+-[a-z]+/ }
+  get '/:title', to: 'posts#entitle', constraints: { title: /[a-zA-Z0-9\-_]*[a-z]+-[a-z]+[a-zA-Z0-9\-_]*/ }
   get '/:title', to: 'posts#title', constraints: { title: /.*%[A-Z0-9].*/ }
 
   resources :posts
