@@ -6,9 +6,12 @@ Blog::Application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'welcome#index'
 
-  resources :posts
+# seo 短 url
+  # get '/:id' => 'posts#show
+  get '/:title', to: 'posts#entitle', constraints: { title: /[a-z]+-[a-z]+/ }
+  get '/:title', to: 'posts#title', constraints: { title: /.*%[A-Z0-9].*/ }
 
-  # post GET    /posts/:id(.:format)      posts#show
+  resources :posts
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
