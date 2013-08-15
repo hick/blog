@@ -1,6 +1,6 @@
-<% provide(:title, '编辑日志') %>
+<% provide(:title, '编辑文章') %>
 
-<h1>Editing post</h1>
+<h1>编辑文章</h1>
  
 <%= form_for :post, url: post_path(@post.id), method: :patch do |f| %>
   <% if @post.errors.any? %>
@@ -15,18 +15,23 @@
   </div>
   <% end %>
   <p>
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
+    <%= f.label :title %>
+    <%= f.text_field :title, size: 60 %>
   </p>
  
   <p>
-    <%= f.label :"en title: 和 title 可能的同步问题还是手工处理吧" %><br>
-    <%= f.text_field :entitle %>
+    <%= f.label :"entit" %>
+    <%= f.text_field :entitle, size: 60 %>
+  </p>
+ 
+  <p>
+    <%= f.label :"kywds" %>
+    <%= f.text_field :keywords, size: 60 %>
   </p>
  
   <p>
     <%= f.label :text %><br>
-    <%= f.text_area :text %>
+    <%= f.text_area :text, cols: 100, rows: 30 %>
   </p>
  
   <p>

@@ -8,6 +8,7 @@ class PostsController < ApplicationController
     @posts = Post.order("created_at DESC").first(10)
     @first_title = @posts[0].title
     @first_text = md(@posts[0].text)
+    @first_time = md(@posts[0].created_at.strftime("%Y-%m-%d %X"))
     render 'page'
   end
 
@@ -66,7 +67,7 @@ class PostsController < ApplicationController
 
     @post = Post.find(params[:id])
 
-    if @post.update(params[:post].permit(:title, :entitle, :text))
+    if @post.update(params[:post].permit(:title, :entitle, :keywords, :text))
       redirect_to @post
     else
       render 'edit'
