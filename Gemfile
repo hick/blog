@@ -28,8 +28,9 @@ gem 'turbolinks'
 gem "redcarpet", "~> 3.0.0"
 
 # pager
-gem 'will_paginate', '3.0.4'
-gem 'bootstrap-will_paginate', '0.0.9'
+gem 'kaminari'
+# gem 'will_paginate', '3.0.4'
+# gem 'bootstrap-will_paginate', '0.0.9'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
