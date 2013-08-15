@@ -1,4 +1,4 @@
-<% provide(:title, '添加日志') %>
+<% provide(:title, '添加文章') %>
 
 
 <%= form_for :post , url: posts_path do |f| %>
@@ -17,22 +17,22 @@
 
   <p>
     <%= f.label :" * 标题" %><br>
-    <%= f.text_field :title %>
+    <%= f.text_field :title, size: 60 %>
   </p>
  
   <p>
     <%= f.label :" - 英文标题" %><br>
-    <%= f.text_field :entitle %>
+    <%= f.text_field :entitle, size: 60 %>
   </p>
  
   <p>
     <%= f.label :" * 关键词(逗号分割)" %><br>
-    <%= f.text_field :keywords %>
+    <%= f.text_field :keywords, size: 60 %>
   </p>
  
   <p>
     <%= f.label :" * 正文" %><br>
-    <%= f.text_area :text %>
+    <%= f.text_area :text, cols: 100, rows: 30 %>
   </p>
  
   <p>
