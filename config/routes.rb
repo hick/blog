@@ -11,9 +11,6 @@ Blog::Application.routes.draw do
   get '/:title', to: 'posts#entitle', constraints: { title: /[a-zA-Z0-9\-_]*[a-z]+-[a-z]+[a-zA-Z0-9\-_]*/ }
   get '/:title', to: 'posts#title', constraints: { title: /.*%[A-Z0-9].*/ }
 
-  # 兼容老的 wordpress 的 url
-  get '/\?p=:id', to: 'posts#show', constraints: { id: /[0-9]+/ }
-  
 
   resources :posts
 
