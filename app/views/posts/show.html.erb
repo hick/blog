@@ -3,6 +3,11 @@
 <p>
   <strong>标题:</strong>
   <%= @post.title %>
+      <% if cookies[:user] == "hick" %>
+      <%= link_to '编辑', edit_post_path(@post) %>
+      <%= link_to '删除', post_path(@post),
+                    method: :delete, data: { confirm: 'Are you sure?' } %>
+      <% end %>
 </p>
  
 
