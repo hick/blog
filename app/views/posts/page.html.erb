@@ -1,0 +1,21 @@
+<% provide(:title, '日志列表') %>
+
+<h1>最新日志列表</h1>
+ 
+
+ 
+<ul>
+  <% @posts.each do |post| %>
+    <li><%= link_to post.title, "#{root_path}#{post.title}" %></li>
+  <% end %>
+</ul>
+
+  
+
+
+
+<h1>最新日志</h1>
+
+
+<%= @first_title %>
+<%= raw(@first_text) %>

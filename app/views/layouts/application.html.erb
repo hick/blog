@@ -9,11 +9,14 @@
 <body>
 
 <div id="nav">
-    <img border="0" SRC=http://blog.hickwu.com/img/logo.gif id="logo">
+    <a href="/"><img border="0" SRC=http://blog.hickwu.com/img/logo.gif id="logo"></a>
 
     <div id="nav_link">
-        <%= link_to '查看日志列表', posts_path %> 
-        <%= link_to '添加日志', new_post_path %> 
+        <%= link_to '首页', root_path %>
+        <%= link_to 'blogs', posts_path %> 
+        <% if cookies[:user] == "hick" %>
+          <%= link_to '添加日志', new_post_path %>
+        <% end %>
     </div>
 </div>
 

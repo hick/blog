@@ -1,11 +1,23 @@
+require 'redcarpet'
+
+
 class PostsController < ApplicationController
 
+  def page
+    # @posts = Post.page(params[:page]).per(1)
+    @posts = Post.order("created_at DESC").first(10)
+    @first_title = @posts[0].title
+    @first_text = md(@posts[0].text)
+    render 'page'
+  end
+
   def index
-    @posts = Post.all
+    # @posts = Post.all(:page => params[:page]) 
+    @posts = Post.page(params[:page]).per(10).order("created_at DESC")
   end
 
   def new
-    cookies.permanent[:user] = "hick"
+    # cookies.permanent[:user] = "hick"
     valid()
 
     # 注意这里的变化
@@ -14,16 +26,21 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
+    @post.text = md(@post.text)
   end
 
   ## 根据 title 查找
   def title
     @post = Post.where("title = ?", params[:title]).take
+    @post.text = md(@post.text)
+    render 'show'
   end
 
   ## 根据 entitle 查找
   def entitle
     @post = Post.where("entitle = ?", params[:title]).take
+    @post.text = md(@post.text)
+    render 'show'
   end
 
   def create
@@ -71,6 +88,12 @@ class PostsController < ApplicationController
     if cookies[:user] != "hick"
       redirect_to posts_path
     end
+  end
+
+  ### 转换 markdown 格式
+  def md(str)
+    markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML, :autolink => true, :space_after_headers => true)
+    markdown.render(str)
   end
 
   private

@@ -10,14 +10,11 @@
   <%= @post.entitle %>
 </p>
  
-<p>
-  <strong>Keywords:</strong>
-  <%= @post.keywords %>
 </p>
  
 <p>
   <strong>Text:</strong>
-  <%= @post.text %>
+  <%= raw(@post.text) %>
 </p>
 
 <%= link_to '返回日志列表', posts_path %>
