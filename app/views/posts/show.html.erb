@@ -1,19 +1,20 @@
 <% provide(:title, '显示日志') %>
 
 <p>
-  <strong>Title:</strong>
+  <strong>标题:</strong>
   <%= @post.title %>
 </p>
  
+
 <p>
-  <strong>En Title:</strong>
-  <%= @post.entitle %>
+  <strong>时间:</strong>
+  <%= @post.created_at.strftime("%Y-%m-%d %X") %>
 </p>
  
 </p>
  
 <p>
-  <strong>Text:</strong>
+  <strong>正文:</strong>
   <%= raw(@post.text) %>
 </p>
 

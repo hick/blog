@@ -4,6 +4,14 @@ require 'redcarpet'
 class PostsController < ApplicationController
 
   def page
+    ### 如果传递了 p 参数，则重定向
+    if params[:p].to_i > 0
+      # 下面这种链接写死了，不大好，后续需要学习改进
+      id = params[:p].to_i
+      redirect_to "/posts/#{id}", status: 301
+      return
+    end
+
     # @posts = Post.page(params[:page]).per(1)
     @posts = Post.order("created_at DESC").first(10)
     @first_title = @posts[0].title

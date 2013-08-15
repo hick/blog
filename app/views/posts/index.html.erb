@@ -7,7 +7,7 @@
   <% @posts.each do |post| %>
     <tr>
       <td>
-      <%= post.created_at.strftime("%Y-%m-%d %X") %>
+        <%= post.created_at.strftime("%Y-%m-%d %X") %>
         <%= link_to post.title, "#{root_path}#{post.title}" %>
       </td>
       <td><%= link_to '查看', post_path(post) %></td>
