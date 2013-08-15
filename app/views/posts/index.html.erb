@@ -7,10 +7,10 @@
   <% @posts.each do |post| %>
     <tr>
       <td><%= link_to post.title, "#{root_path}#{post.title}" %></td>
-      <td><%= link_to 'Show', post_path(post) %></td>
+      <td><%= link_to '查看', post_path(post) %></td>
       <% if cookies[:user] == "hick" %>
-      <td><%= link_to 'Edit', edit_post_path(post) %></td>
-      <td><%= link_to 'Destroy', post_path(post),
+      <td><%= link_to '编辑', edit_post_path(post) %></td>
+      <td><%= link_to '删除', post_path(post),
                     method: :delete, data: { confirm: 'Are you sure?' } %></td>
       <% end %>
     </tr>
