@@ -115,6 +115,7 @@ class PostsController < ApplicationController
     html_toc = Redcarpet::Markdown.new(Redcarpet::Render::HTML_TOC)
     toc  = html_toc.render(str)
     ### 渲染正文内容
+    $id_count = -1  # 查了下没找到解决方案，先用这本办法解决全局变量的问题了(发现进程/请求之间有共享)
     markdown = Redcarpet::Markdown.new(
       OurHTML.new(:with_toc_data => true, :link_attributes => Hash["target" => "_blank"]), 
       :autolink => true, :space_after_headers => true, :no_intra_emphasis => true,
