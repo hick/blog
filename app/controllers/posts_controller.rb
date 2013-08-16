@@ -1,5 +1,14 @@
 require 'redcarpet'
 
+$id_count = -1
+class OurHTML < Redcarpet::Render::HTML
+  def header(text, level)
+    h_level = level + 1
+    $id_count += 1
+    "<h#{h_level} id=\"toc_#{$id_count}\">#{text}</h#{h_level}>"
+  end
+end
+
 
 class PostsController < ApplicationController
 
@@ -101,12 +110,17 @@ class PostsController < ApplicationController
 
   ### 转换 markdown 格式
   def md(str)
+
+    ### 生成 toc 
+    html_toc = Redcarpet::Markdown.new(Redcarpet::Render::HTML_TOC)
+    toc  = html_toc.render(str)
+    ### 渲染正文内容
     markdown = Redcarpet::Markdown.new(
-      Redcarpet::Render::HTML.new(:link_attributes => Hash["target" => "_blank"]), 
+      OurHTML.new(:with_toc_data => true, :link_attributes => Hash["target" => "_blank"]), 
       :autolink => true, :space_after_headers => true, :no_intra_emphasis => true,
       :tables => true
     )
-    markdown.render(str)
+    toc.to_s + markdown.render(str)
   end
 
   private
