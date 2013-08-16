@@ -101,7 +101,11 @@ class PostsController < ApplicationController
 
   ### 转换 markdown 格式
   def md(str)
-    markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML, :autolink => true, :space_after_headers => true, :no_intra_emphasis => true)
+    markdown = Redcarpet::Markdown.new(
+      Redcarpet::Render::HTML.new(:link_attributes => Hash["target" => "_blank"]), 
+      :autolink => true, :space_after_headers => true, :no_intra_emphasis => true,
+      :tables => true
+    )
     markdown.render(str)
   end
 
