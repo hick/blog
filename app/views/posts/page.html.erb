@@ -18,3 +18,8 @@
 <p>标题: <%= @first_title %></p>
 <p>时间: <%= raw(@first_time.localtime.to_s(:db)) %></p>
 <%= raw(@first_text) %>
+
+<p></p>
+<p>
+<%= link_to '查看更多文章', posts_path %> 
+</p>
