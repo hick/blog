@@ -25,7 +25,7 @@ class PostsController < ApplicationController
     @posts = Post.order("created_at DESC").first(10)
     @first_title = @posts[0].title
     @first_text = md(@posts[0].text)
-    @first_time = md(@posts[0].created_at.strftime("%Y-%m-%d %X"))
+    @first_time = md(@posts[0].created_at.localtime.to_s(:db))
     render 'page'
   end
 

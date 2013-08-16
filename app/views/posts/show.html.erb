@@ -13,7 +13,7 @@
 
 <p>
   <strong>时间:</strong>
-  <%= @post.created_at.strftime("%Y-%m-%d %X") %>
+  <%= @post.created_at.localtime.to_s(:db) %>
 </p>
  
 </p>
