@@ -15,6 +15,6 @@
 <h1>最新日志</h1>
 
 
-<%= @first_title %>
-<%= raw(@first_time) %>
+<p>标题: <%= @first_title %></p>
+<p>时间: <%= raw(@first_time.localtime.to_s(:db)) %></p>
 <%= raw(@first_text) %>
