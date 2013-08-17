@@ -1,18 +1,19 @@
-<% provide(:title, '日志列表') %>
+<% provide(:title, '文章列表') %>
 
-<h1>最新日志列表</h1>
+<h1>最新文章列表</h1>
  
 
  
 <ul>
   <% @posts.each do |post| %>
-    <li><%= link_to post.title, "#{root_path}#{post.title}" %></li>
+    <li><%= raw(post.created_at.localtime.to_s(:db)) %> <%= link_to post.title, "#{root_path}#{post.title}" %></li>
   <% end %>
 </ul>
 
+<%= link_to '查看更多文章', posts_path %> 
 
 
-<h1>最新日志</h1>
+<h1>最新文章</h1>
 
 
 <p>标题: <%= @first_title %></p>

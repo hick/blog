@@ -72,13 +72,13 @@ class PostsController < ApplicationController
     end
   end
 
-  ### 修改日志页面
+  ### 修改文章页面
   def edit
     valid()
     @post = Post.find(params[:id])
   end
 
-  ### 修改日志操作
+  ### 修改文章操作
   def update
     valid()
 
@@ -91,7 +91,7 @@ class PostsController < ApplicationController
     end
   end
 
-  ### 删除日志
+  ### 删除文章
   def destroy
     valid()
 
