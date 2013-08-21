@@ -10,7 +10,6 @@
         <%= post.created_at.localtime.to_s(:db) %>
         <%= link_to post.title, "#{root_path}#{post.title}" %>
       </td>
-      <td><%= link_to '查看', post_path(post) %></td>
       <% if cookies[:user] == "hick" %>
       <td><%= link_to '编辑', edit_post_path(post) %></td>
       <td><%= link_to '删除', post_path(post),
