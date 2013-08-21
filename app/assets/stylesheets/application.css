@@ -46,3 +46,12 @@ a:focus {
 a:visited {
     color: #999999;
 }
+
+/*导航栏*/
+div#nav_link {
+  font-size: 130%;
+}
+
+div#nav_link a{
+    border-bottom: 5px solid #eeeeee;
+}
