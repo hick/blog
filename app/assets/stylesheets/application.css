@@ -55,3 +55,8 @@ div#nav_link {
 div#nav_link a{
     border-bottom: 5px solid #eeeeee;
 }
+
+div#body {
+  width: 900px;
+}
+
