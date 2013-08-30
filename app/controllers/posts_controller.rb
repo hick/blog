@@ -26,6 +26,7 @@ class PostsController < ApplicationController
     @first_title = @posts[0].title
     @first_text = md(@posts[0].text)
     @first_time = @posts[0].created_at
+    @first_id = @posts[0].id
     render 'page'
   end
 
