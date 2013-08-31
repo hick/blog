@@ -24,20 +24,22 @@
 </p>
 
 <!-- Duoshuo Comment BEGIN -->
-<div class="ds-thread" data-url="http://blog.hickwu.com/posts/<%= @post.id %>" data-thread-key=="post_<%= @post.id %>" data-title="<%= @post.title %>" data-image="http://blog.hickwu.com/assets/logo.gif"
-    data-author-key="hick" data-form-positon="bottom" data-limit=5 data-order="desc"></div>
+<!-- <div class="ds-thread" data-url="http://blog.hickwu.com/posts/<%= @post.id %>" data-thread-key=="post_<%= @post.id %>" data-title="<%= @post.title %>" data-image="http://blog.hickwu.com/assets/logo.gif"
+    data-author-key="hick" data-form-positon="bottom" data-limit=5 data-order="desc"></div> -->
+
+<div id="dscomment"></div>
 <script type="text/javascript">
-var duoshuoQuery = {short_name:"hick"};
-  (function() {
-    var ds = document.createElement('script');
-    ds.type = 'text/javascript';ds.async = true;
-    ds.src = 'http://static.duoshuo.com/embed.js';
-    ds.charset = 'UTF-8';
-    (document.getElementsByTagName('head')[0] 
-    || document.getElementsByTagName('body')[0]).appendChild(ds);
-  })();
-  </script>
+function toggleDuoshuoComments(container){
+    var el = document.createElement('div');
+    el.setAttribute('data-thread-key', 'post_<%= @post.id %>');
+    el.setAttribute('data-url', 'http://blog.hickwu.com/posts/<%= @post.id %>');
+    DUOSHUO.EmbedThread(el);
+    jQuery(container).append(el);
+}
+toggleDuoshuoComments('#dscomment');
+</script>
 <!-- Duoshuo Comment END -->
+
 
 
 <p>
