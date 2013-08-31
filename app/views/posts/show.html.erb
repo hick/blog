@@ -32,7 +32,7 @@
 function toggleDuoshuoComments(){
     container = '#comment-box';
     var el = document.createElement('div');
-    el.setAttribute('data-thread-key', 'post_<%= @post.id %>');
+    el.setAttribute('data-thread-key', '<%= @post.id %>');
     el.setAttribute('data-url', 'http://blog.hickwu.com/posts/<%= @post.id %>');
     DUOSHUO.EmbedThread(el);
     jQuery(container).append(el);
