@@ -11,39 +11,3 @@
 </ul>
 
 <%= link_to '查看更多文章', posts_path %> 
-
-
-<h1>最新文章</h1>
-
-
-<p>标题: <%= @first_title %></p>
-<p>时间: <%= raw(@first_time.localtime.to_s(:db)) %></p>
-<%= raw(@first_text) %>
-
-
-
-<!-- Duoshuo Comment BEGIN -->
-<div id="comment-box" ></div>
-<script type="text/javascript">
-function toggleDuoshuoComments(){
-    container = '#comment-box';
-    var el = document.createElement('div');//该div不需要设置class="ds-thread"
-    el.setAttribute('data-thread-key', '<%= @first_id %>');//必选参数
-    el.setAttribute('data-url', 'http://blog.hickwu.com/posts/<%= @first_id %>');//必选参数
-    DUOSHUO.EmbedThread(el);
-    jQuery(container).append(el);
-}
-setTimeout(toggleDuoshuoComments,1000); 
-</script>
-
-
-
-<!-- <div class="ds-thread" data-url="http://blog.hickwu.com/posts/<%= @first_id %>" data-thread-key=="post_<%= @first_id %>" data-title="<%= @first_title %>" data-image="http://blog.hickwu.com/assets/logo.gif"
-    data-author-key="hick" data-form-positon="bottom" data-limit=5 data-order="desc"></div> -->
-<!-- Duoshuo Comment END -->
-
-
-
-<p>
-<%= link_to '查看更多文章', posts_path %> 
-</p>

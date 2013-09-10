@@ -22,7 +22,7 @@ class PostsController < ApplicationController
     end
 
     # @posts = Post.page(params[:page]).per(1)
-    @posts = Post.order("created_at DESC").first(10)
+    @posts = Post.order("created_at DESC").first(20)
     @first_title = @posts[0].title
     @first_text = md(@posts[0].text)
     @first_time = @posts[0].created_at
@@ -32,7 +32,7 @@ class PostsController < ApplicationController
 
   def index
     # @posts = Post.all(:page => params[:page]) 
-    @posts = Post.page(params[:page]).per(10).order("created_at DESC")
+    @posts = Post.page(params[:page]).per(20).order("created_at DESC")
   end
 
   def new
