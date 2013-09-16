@@ -12,15 +12,8 @@ end
 
 class PostsController < ApplicationController
 
+  ### 目前已经去掉该功能
   def page
-    ### 如果传递了 p 参数，则重定向
-    if params[:p].to_i > 0
-      # 下面这种链接写死了，不大好，后续需要学习改进
-      id = params[:p].to_i
-      redirect_to "/posts/#{id}", status: 301
-      return
-    end
-
     # @posts = Post.page(params[:page]).per(1)
     @posts = Post.order("created_at DESC").first(20)
     @first_title = @posts[0].title
@@ -31,6 +24,15 @@ class PostsController < ApplicationController
   end
 
   def index
+
+    ### 如果传递了 p 参数，则重定向
+    if params[:p].to_i > 0
+      # 下面这种链接写死了，不大好，后续需要学习改进
+      id = params[:p].to_i
+      redirect_to "/posts/#{id}", status: 301
+      return
+    end
+
     # @posts = Post.all(:page => params[:page]) 
     @posts = Post.page(params[:page]).per(20).order("created_at DESC")
   end
