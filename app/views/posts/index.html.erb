@@ -2,11 +2,11 @@
 
 <h1>文章列表</h1>
  
-<table>
+<table width="100%">
  
   <% @posts.each do |post| %>
     <tr>
-      <td>
+      <td width="90%">
         <%= post.created_at.localtime.to_s(:db) %>
         <%= link_to post.title, "#{root_path}#{post.title}" %>
       </td>
