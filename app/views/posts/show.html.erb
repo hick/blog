@@ -23,6 +23,30 @@
   <%= raw(@post.text) %>
 </p>
 
+
+
+<%= link_to '查看更多文章', posts_path %> 
+
+<!-- Baidu Button BEGIN -->
+<div id="bdshare" class="bdshare_t bds_tools get-codes-bdshare">
+<span class="bds_more">分享到：</span>
+<a class="bds_qzone"></a>
+<a class="bds_tsina"></a>
+<a class="bds_tqq"></a>
+<a class="bds_renren"></a>
+<a class="bds_t163"></a>
+</div>
+<script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=6138568" ></script>
+<script type="text/javascript" id="bdshell_js"></script>
+<script type="text/javascript">
+document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000)
+</script>
+<!-- Baidu Button END -->
+
+<br />
+
+
+
 <!-- Duoshuo Comment BEGIN -->
 <!-- <div class="ds-thread" data-url="http://blog.hickwu.com/posts/<%= @post.id %>" data-thread-key=="post_<%= @post.id %>" data-title="<%= @post.title %>" data-image="http://blog.hickwu.com/assets/logo.gif"
     data-author-key="hick" data-form-positon="bottom" data-limit=5 data-order="desc"></div> -->
@@ -43,6 +67,5 @@ setTimeout(toggleDuoshuoComments, 1000);
 
 
 
-<p>
-<%= link_to '查看更多文章', posts_path %> 
-</p>
+
+
