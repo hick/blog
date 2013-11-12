@@ -17,7 +17,7 @@ class PostsController < ApplicationController
     # @posts = Post.page(params[:page]).per(1)
     @posts = Post.order("created_at DESC").first(20)
     @first_title = @posts[0].title
-    @first_text = md(@posts[0].text)
+    @first_text = md(@posts[0].text, @posts[0].id)
     @first_time = @posts[0].created_at
     @first_id = @posts[0].id
     render 'page'
@@ -47,20 +47,20 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
-    @post.text = md(@post.text)
+    @post.text = md(@post.text, @post.id)
   end
 
   ## 根据 title 查找
   def title
     @post = Post.where("title = ?", params[:title]).take
-    @post.text = md(@post.text)
+    @post.text = md(@post.text, @post.id)
     render 'show'
   end
 
   ## 根据 entitle 查找
   def entitle
     @post = Post.where("entitle = ?", params[:title]).take
-    @post.text = md(@post.text)
+    @post.text = md(@post.text, @post.id)
     render 'show'
   end
 
@@ -112,11 +112,19 @@ class PostsController < ApplicationController
   end
 
   ### 转换 markdown 格式
-  def md(str)
+  def md(str, id='')
 
     ### 生成 toc 
     html_toc = Redcarpet::Markdown.new(Redcarpet::Render::HTML_TOC)
     toc  = html_toc.render(str)
+
+    str = str.lstrip()
+
+    # 转载说明
+    str = str.sub(/[\r\n]+/, "\n\n&nbsp; &nbsp; &nbsp; &nbsp;
+        <span style='color:#cccccc'>转载请注明出处 [http://blog.hickwu.com/posts/#{id}](http://blog.hickwu.com/posts/#{id}) 
+        by [Hick](http://blog.hickwu.com:)</span>\n\n")
+
     ### 渲染正文内容
     $id_count = -1  # 查了下没找到解决方案，先用这本办法解决全局变量的问题了(发现进程/请求之间有共享)
     markdown = Redcarpet::Markdown.new(
@@ -133,3 +141,5 @@ class PostsController < ApplicationController
       
     end
 end
+
+
