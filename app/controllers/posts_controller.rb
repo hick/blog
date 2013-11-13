@@ -120,8 +120,8 @@ class PostsController < ApplicationController
 
     str = str.lstrip()
 
-    # 转载说明
-    str = str.sub(/[\r\n]+/, "\n\n&nbsp; &nbsp; &nbsp; &nbsp;
+    # 转载说明，在三个换行---空两行--的位置插入。考虑 windows 下一个换行为 \r\n  
+    str = str.sub(/(\r\n){3}|\r{3}|\n{3}/, "\n\n&nbsp; &nbsp; &nbsp; &nbsp;
         <span style='color:#cccccc'>转载请注明出处 [http://blog.hickwu.com/posts/#{id}](http://blog.hickwu.com/posts/#{id}) 
         by [Hick](http://blog.hickwu.com:)</span>\n\n")
 
