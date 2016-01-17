@@ -18,6 +18,7 @@
     <div id="nav_link">
         <%= link_to '首页', root_path %>
         <%= link_to '文章', posts_path %> 
+        <%= link_to 'RSS', 'http://hickwu.com/blog/rss' %>        
         <%= link_to 'Web开发: WebRube', 'http://www.WebRube.com' %> 
         <% if cookies[:user] == "hick" %>
           <%= link_to '添加', new_post_path %>
